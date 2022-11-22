@@ -18,9 +18,12 @@ class Unserializer {
 	}
 
 	static unserialize(data) {
+		let g = { __enum__: {}, __class__: {} };
+		try { g = global } catch(e) {}
+		try { g = window } catch(e) {}
 		let U = new Unserializer(data, {
-			ENUM_RESOLVER: window?.__enum__,
-			CLASS_RESOLVER: window?.__class__
+			ENUM_RESOLVER: g?.__enum__,
+			CLASS_RESOLVER: g?.__class__
 		});
 		return U.run();
 	}
