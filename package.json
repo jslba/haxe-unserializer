@@ -1,0 +1,11 @@
+{
+	"name": "haxe-unserializer",
+	"version": "0.0.1",
+	"description": "My Own Implementation of haxe.Unserializer",
+	"main": "source/index.js",
+	"keywords": [
+		"haxe"
+	],
+	"author": "Angelisium",
+	"license": "MIT"
+}
