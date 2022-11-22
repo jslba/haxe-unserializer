@@ -7,5 +7,9 @@
 		"haxe"
 	],
 	"author": "Angelisium",
-	"license": "MIT"
+	"license": "MIT",
+	"dependencies": {
+		"haxe-basecode": "^0.0.1",
+		"haxe-type": "^0.0.2"
+	}
 }
