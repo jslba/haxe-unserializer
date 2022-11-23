@@ -3,6 +3,9 @@
 	"version": "0.0.2",
 	"description": "My Own Implementation of haxe.Unserializer",
 	"main": "source/index.js",
+	"scripts": {
+		"test": "jest"
+	},
 	"keywords": [
 		"haxe"
 	],
@@ -11,5 +14,8 @@
 	"dependencies": {
 		"haxe-basecode": "^0.0.1",
 		"haxe-type": "^0.0.3"
+	},
+	"devDependencies": {
+		"jest": "^29.3.1"
 	}
 }
