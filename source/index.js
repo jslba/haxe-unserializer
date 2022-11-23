@@ -1,4 +1,4 @@
-const { List, Bytes, IntMap, StringMap, ObjectMap, Enum, Class } = require('haxe-type');
+const { List, Bytes, IntMap, StringMap, Enum, Class } = require('haxe-type');
 const BaseCode = require('haxe-basecode');
 
 class Unserializer {
@@ -85,9 +85,9 @@ class Unserializer {
 			case 'y': return this.readStringScheme('String');
 			case 'z': return 0;
 			case 'C': return; // Custom
-			case 'M':
+			/* case 'M':
 				let oma = this.readArrayScheme('ObjectMap', 'h');
-				return new ObjectMap(...oma);
+				return new ObjectMap(...oma); */
 			case 'R': return this.readCache(this.StringCache);
 			default:
 				let p = this.i - 1;
