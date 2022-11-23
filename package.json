@@ -1,6 +1,6 @@
 {
 	"name": "haxe-unserializer",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "My Own Implementation of haxe.Unserializer",
 	"main": "source/index.js",
 	"keywords": [
@@ -10,6 +10,6 @@
 	"license": "MIT",
 	"dependencies": {
 		"haxe-basecode": "^0.0.1",
-		"haxe-type": "^0.0.2"
+		"haxe-type": "^0.0.3"
 	}
 }
