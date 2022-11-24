@@ -131,12 +131,11 @@ test('unserialize list', function () {
 
 /* Bytes (haxe.io.Bytes)
  ******************************************************************************/
-// test('unserialize bytes', function () {
-// 	let byte = Bytes.ofString("Hello World!"),
-// 		result = Unserializer.unserialize("s16:SGVsbG8gV29ybGQh");
-// 	// expect(result).toStrictEqual(byte);
-// 	expect(result).toStrictEqual(byte);
-// });
+test('unserialize bytes', function () {
+	let byte = Bytes.ofString("Hello World!"),
+		result = Unserializer.unserialize("s16:SGVsbG8gV29ybGQh");
+	expect(result.buffer).toStrictEqual(byte.buffer);
+});
 
 /* IntMap (haxe.ds.IntMap)
  ******************************************************************************/
