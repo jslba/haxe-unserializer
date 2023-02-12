@@ -1,6 +1,6 @@
 {
 	"name": "haxe-unserializer",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "An implementation of haxe.Unserializer",
 	"main": "source/index.js",
 	"scripts": {
