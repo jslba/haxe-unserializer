@@ -1,14 +1,14 @@
 {
 	"name": "haxe-unserializer",
 	"version": "0.0.4",
-	"description": "My Own Implementation of haxe.Unserializer",
+	"description": "An implementation of haxe.Unserializer",
 	"main": "source/index.js",
 	"scripts": {
 		"test": "jest --config=test/jest.config.js"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/jshlba/haxe-unserializer.git"
+		"url": "git+https://github.com/jslba/haxe-unserializer.git"
 	},
 	"keywords": [
 		"haxe"
@@ -16,9 +16,9 @@
 	"author": "Angelisium",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/jshlba/haxe-unserializer/issues"
+		"url": "https://github.com/jslba/haxe-unserializer/issues"
 	},
-	"homepage": "https://github.com/jshlba/haxe-unserializer",
+	"homepage": "https://github.com/jslba/haxe-unserializer",
 	"dependencies": {
 		"haxe-basecode": "^0.0.2",
 		"haxe-type": "^0.0.3"
