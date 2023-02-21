@@ -1,4 +1,9 @@
-# [Unserializer][01] implement of [haxe.Unserializer][02]
+# [Unserializer][index] implement of [haxe.Unserializer][02]
+
+![npm](https://img.shields.io/npm/v/haxe-unserializer?color=blue&style=flat)
+![tests](https://img.shields.io/static/v1?label=tests&message=24%20passed&color=brightgreen&style=flat)
+![GitHub](https://img.shields.io/github/license/jslba/haxe-unserializer?style=flat)
+
 The Unserializer class can be used to  decode values and objects from a `String`
 created by the `Serializer` class.   
 This class can be used in two ways :
@@ -31,45 +36,102 @@ The specification of the serialization format can be found [here][03].
  - ObjectMap (haxe.ds.ObjectMap)
  - custom
 
-<!-- Soon
-## Static methods
+> **Note**   
+> If you are looking  for how to  use it, you  can look at some  examples in the
+> [unit tests][unittests].
+
 ## Constructor
-## Methods
--->
-# Some examples of use
-```js
-Unserializer.unserialize("y6:Sample"); // output "Sample"
 
-class MyEnum extends Enum {
-	static __construct__ = ['EnumName'];
-	static EnumName() = new this('EnumName', 0);
-}
-MyEnum.resolve();
-
-Unserializer.unserialize("axy4:testjy6:MyEnum:0:0h"); // ends the script with the callable error <Error> "test"
-
-// With DEBUG_MODE :
-new Unserializer("axy4:testjy6:MyEnum:0:0h", {
-    DEBUG_MODE = true
-}).run();
-/* output <Array> [
-    <Error> "test",
-    <Array> ['DEBUG_VALUES', 'MyEnum', 0]
-] */
-
-// With DEBUG_MODE and valid ENUM_RESOLVER :
-new Unserializer("axy4:testjy6:MyEnum:0:0h", {
-    DEBUG_MODE = true,
-    ENUM_RESOLVER = window.__enum__
-}).run();
-/* output <Array> [
-    <Error> "test",
-    <MyEnum> ['EnumName', 0]
-] */
-
-// /!\ DEBUG_VALUES aren't serializable after unserialization /!\
+```hx
+new Unserializer(data: String, {
+    DEBUG_MODE: Bool = false,
+    ENUM_RESOLVER: Object = {},
+    CLASS_RESOLVER: Object = {}
+})
 ```
 
-[01]: /source/index.js
+## Variables
+
+```hx
+public i: Int
+```
+
+```hx
+public buffer: String
+```
+
+```hx
+// buffer length
+public length: Int
+```
+
+```hx
+public StringCache: Array<String>
+```
+
+```hx
+public ObjectCache: Array<Mixed>
+```
+
+```hx
+public DEBUG_MODE: Bool
+```
+
+```hx
+public ENUM_RESOLVER: Object
+```
+
+```hx
+public CLASS_RESOLVER: Object
+```
+
+## Methods
+
+```hx
+static unserialize
+```
+
+```hx
+// return the unserialized buffer
+public run(): Mixed
+```
+
+```hx
+// internal function, a description soon
+public readCache(cache: Array): Mixed
+```
+
+```hx
+// internal function, a description soon
+public readArrayScheme(type: String, end: String): Array
+```
+
+```hx
+// internal function, a description soon
+public readNumberScheme(type: String): Int|Float
+```
+
+```hx
+// internal function, a description soon
+public readObjectScheme(type: String, end: String): Object
+```
+
+```hx
+// internal function, a description soon
+public readStringScheme(type: String): String
+```
+
+```hx
+// internal function, a description soon
+public readEnum(type: String): Enum
+```
+
+```hx
+// internal function, a description soon
+public resolveClass(name: String, values: Object): Class
+```
+
+[index]: /source/index.js
+[unittests]: /test/by_unserialize.test.js
 [02]: https://api.haxe.org/haxe/Unserializer.html
 [03]: https://haxe.org/manual/std-serialization-format.html
